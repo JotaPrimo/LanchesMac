@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\PROJETOS\\MEUS\\cursos\\c#\\LanchesMac\\LanchesMac\\wwwroot\\images\\x-ovo.jpeg",
+      "PackagePath": "staticwebassets\\images\\x-ovo.jpeg"
+    },
+    {
+      "Id": "C:\\PROJETOS\\MEUS\\cursos\\c#\\LanchesMac\\LanchesMac\\wwwroot\\images\\x-salada.jpeg",
+      "PackagePath": "staticwebassets\\images\\x-salada.jpeg"
+    },
+    {
+      "Id": "C:\\PROJETOS\\MEUS\\cursos\\c#\\LanchesMac\\LanchesMac\\wwwroot\\images\\x-tudo.jpeg",
+      "PackagePath": "staticwebassets\\images\\x-tudo.jpeg"
+    },
+    {
       "Id": "C:\\PROJETOS\\MEUS\\cursos\\c#\\LanchesMac\\LanchesMac\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
