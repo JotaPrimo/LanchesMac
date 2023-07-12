@@ -8,25 +8,25 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\MICRO\\.nuget\\packages\\": {},
+    "C:\\Users\\Jailson Primo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PROJETOS\\MEUS\\cursos\\c#\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
+      "projectUniqueName": "C:\\Cursos\\C#\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
       "projectName": "LanchesMac",
-      "projectPath": "C:\\PROJETOS\\MEUS\\cursos\\c#\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
-      "packagesPath": "C:\\Users\\MICRO\\.nuget\\packages\\",
-      "outputPath": "C:\\PROJETOS\\MEUS\\cursos\\c#\\LanchesMac\\LanchesMac\\obj\\",
+      "projectPath": "C:\\Cursos\\C#\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
+      "packagesPath": "C:\\Users\\Jailson Primo\\.nuget\\packages\\",
+      "outputPath": "C:\\Cursos\\C#\\LanchesMac\\LanchesMac\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\MICRO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jailson Primo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
