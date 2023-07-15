@@ -31,7 +31,7 @@ namespace LanchesMac.Models
         [Display(Name = "Preco")]
         [Column(TypeName = "decimal(10,2)")]
         [Range(1,999.99, ErrorMessage = "O preço deve estar entre 1 e 999,99")]
-        public string Preco { get; set; }
+        public double Preco { get; set; }
 
         [Display(Name = "Caminho Imagem Normal")]
         [StringLength(200, ErrorMessage = "O {0} deve ter no mínimo {1}  caracteres")]

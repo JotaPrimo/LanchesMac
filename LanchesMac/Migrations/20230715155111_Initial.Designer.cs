@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanchesMac.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230713165114_Teste")]
-    partial class Teste
+    [Migration("20230715155111_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,10 +29,14 @@ namespace LanchesMac.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CategoriaNome")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
@@ -57,26 +61,31 @@ namespace LanchesMac.Migrations
                         .HasColumnType("varchar(200)");
 
                     b.Property<string>("DescricaoDetalhada")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<bool>("EmEstoque")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("ImagemThumbnailUrl")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<string>("ImagemUrl")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<bool>("IslanchePreferido")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(80)
+                        .HasColumnType("varchar(80)");
 
-                    b.Property<string>("Preco")
-                        .HasColumnType("longtext");
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
 
