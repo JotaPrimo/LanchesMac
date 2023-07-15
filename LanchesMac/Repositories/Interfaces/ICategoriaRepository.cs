@@ -1,6 +1,9 @@
-﻿namespace LanchesMac.Repositories.Interfaces
+﻿using LanchesMac.Models;
+
+namespace LanchesMac.Repositories.Interfaces
 {
-    public interface ICategoriaRepositorie
+    public interface ICategoriaRepository
     {
+        IEnumerable<Categoria> GetAll { get; }
     }
 }
