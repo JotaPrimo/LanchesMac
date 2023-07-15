@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -51,8 +50,7 @@ namespace LanchesMac.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     IslanchePreferido = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     EmEstoque = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    CategoriaId = table.Column<int>(type: "int", nullable: false),
-                    DataDeCriacao = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    CategoriaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

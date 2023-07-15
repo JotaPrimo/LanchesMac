@@ -49,9 +49,7 @@ namespace LanchesMac.Models
         [Display(Name = "Lanche Preferido ?")]
         public bool EmEstoque { get; set; }
 
-        public int CategoriaId { get; set; }
-
-        public virtual DateTime DataDeCriacao { get; set; }
+        public int CategoriaId { get; set; }   
 
         [NotMapped]
         public virtual Categoria Categoria { get; set; }

@@ -44,8 +44,7 @@ namespace LanchesMac.Context
                 ImagemThumbnailUrl = "url-thumbnail-da-imagem-lanche-1",
                 IslanchePreferido = true,
                 EmEstoque = true,
-                CategoriaId = 1,
-                DataDeCriacao = DateTime.Now
+                CategoriaId = 1,               
             },
             new Lanche
             {
@@ -57,8 +56,7 @@ namespace LanchesMac.Context
                 ImagemThumbnailUrl = "url-thumbnail-da-imagem-lanche-2",
                 IslanchePreferido = false,
                 EmEstoque = true,
-                CategoriaId = 2,
-                DataDeCriacao = DateTime.Now
+                CategoriaId = 2,               
             },
 
                 };
