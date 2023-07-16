@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Cursos\\C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\carousel11.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel11.jpg"
+    },
+    {
+      "Id": "C:\\Cursos\\C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\carousel12.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel12.jpg"
+    },
+    {
+      "Id": "C:\\Cursos\\C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\carousel13.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel13.jpg"
+    },
+    {
       "Id": "C:\\Cursos\\C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\x-ovo.jpeg",
       "PackagePath": "staticwebassets\\images\\x-ovo.jpeg"
     },

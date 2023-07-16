@@ -15,6 +15,7 @@ namespace LanchesMac.Controllers
         public IActionResult List()
         {
             var lanches = _repository.GetAll;
+            
 
             return View(lanches);
         }
