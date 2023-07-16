@@ -9,13 +9,19 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-@foreach (var lanche in Model)
-{
-    <div>
-        <h4>lanche : @lanche.Nome</h4>
-        <p>
-            <img src="@lanche.ImagemUrl">
-         </p>
-         <p>Preço : @lanche.Preco.ToString("C")</p>
-    </div>
-}
+<div class="container">
+<div class="row">
+        @foreach (var lanche in Model)
+        {
+            <div class="col-xl-3 col-md-3 col-sm-3">
+                <p>
+                    <img src="@lanche.ImagemUrl" class="img-fluid">
+                </p>
+                <h3>Preço : @lanche.Preco.ToString("C")</h3>
+                <h4>@lanche.Nome</h4>
+                <p>@lanche.DescricaoCurta</p> 
+                            
+            </div>
+        }
+</div>
+</div>
