@@ -2,7 +2,7 @@
 
 
 <div>
-    <h1>Lanches Cadastrados</h1>
+    <h1>@Model.CategoriaAtual</h1>
 </div>
 
 <p>
@@ -10,18 +10,10 @@
 </p>
 
 <div class="container">
-<div class="row">
+    <div class="row">
         @foreach (var lanche in Model.Lanches)
         {
-            <div class="col-xl-3 col-md-3 col-sm-3">
-                <p>
-                    <img src="@lanche.ImagemUrl" class="img-fluid">
-                </p>
-                <h3>Preço : @lanche.Preco.ToString("C")</h3>
-                <h4>@lanche.Nome</h4>
-                <p>@lanche.DescricaoCurta</p> 
-                            
-            </div>
+            <partial name="_LanchesResumo" for="@lanche" />
         }
-</div>
+    </div>
 </div>
