@@ -38,5 +38,66 @@ namespace LanchesMac.Models
 
         }
 
+
+        public void GetCarrinhoCompraItem(Lanche lanche)
+        {
+            return
+                _appDbContext.CarrinhoCompraItems.SingleOrDefault(
+                    s => s.Lanche.Id == lanche.Id &&
+                    s.CarrinhoCompraId == CarrinhoCompraId);
+        }
+
+        public void AdicionarAoCarrinho(Lanche lanche)
+        {
+            var carrinhoCompraItem =
+                _appDbContext.CarrinhoCompraItems.SingleOrDefault(
+                    s => s.Lanche.Id == lanche.Id &&
+                    s.CarrinhoCompraId == CarrinhoCompraId);
+
+            if (carrinhoCompraItem == null)
+            {
+                carrinhoCompraItem = new CarrinhoCompraItem
+                {
+                    CarrinhoCompraId = CarrinhoCompraId,
+                    Lanche = lanche,
+                    Quantidade = 1
+                };
+
+                _appDbContext.CarrinhoCompraItems.Add(carrinhoCompraItem);
+            } else
+            {
+                carrinhoCompraItem.Quantidade++;
+            }
+
+            _appDbContext.SaveChanges();
+
+        }
+
+        public int RemoverDoCarrinho(Lanche lanche)
+        {
+            // pegando o carrinho compra item por meio do Linq
+            var carrinhoCompraItem =
+                _appDbContext.CarrinhoCompraItems.SingleOrDefault(
+                    s => s.Lanche.Id == lanche.Id &&
+                    s.CarrinhoCompraId == CarrinhoCompraId);
+
+            var quantidadeLocal = 0;
+
+            if (carrinhoCompraItem != null)
+            {
+                if (carrinhoCompraItem.Quantidade > 1)
+                {
+                    carrinhoCompraItem.Quantidade--;
+                }
+                else
+                {
+                    _appDbContext.CarrinhoCompraItems.Remove(carrinhoCompraItem);
+                }
+            }
+
+            _appDbContext.SaveChanges();
+            return quantidadeLocal;
+        }
+
     }
 }
