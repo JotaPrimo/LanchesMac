@@ -1,4 +1,6 @@
 ﻿using LanchesMac.Context;
+using LanchesMac.Migrations;
+using System.Data.Entity;
 
 namespace LanchesMac.Models
 {
@@ -39,7 +41,7 @@ namespace LanchesMac.Models
         }
 
 
-        public void GetCarrinhoCompraItem(Lanche lanche)
+        public CarrinhoCompraItem GetCarrinhoCompraItem(Lanche lanche)
         {
             return
                 _appDbContext.CarrinhoCompraItems.SingleOrDefault(
@@ -49,12 +51,9 @@ namespace LanchesMac.Models
 
         public void AdicionarAoCarrinho(Lanche lanche)
         {
-            var carrinhoCompraItem =
-                _appDbContext.CarrinhoCompraItems.SingleOrDefault(
-                    s => s.Lanche.Id == lanche.Id &&
-                    s.CarrinhoCompraId == CarrinhoCompraId);
+            var carrinhoCompraItem = GetCarrinhoCompraItem(lanche);
 
-            if (carrinhoCompraItem == null)
+            if (carrinhoCompraItem.isNull())
             {
                 carrinhoCompraItem = new CarrinhoCompraItem
                 {
@@ -64,6 +63,7 @@ namespace LanchesMac.Models
                 };
 
                 _appDbContext.CarrinhoCompraItems.Add(carrinhoCompraItem);
+
             } else
             {
                 carrinhoCompraItem.Quantidade++;
@@ -76,14 +76,11 @@ namespace LanchesMac.Models
         public int RemoverDoCarrinho(Lanche lanche)
         {
             // pegando o carrinho compra item por meio do Linq
-            var carrinhoCompraItem =
-                _appDbContext.CarrinhoCompraItems.SingleOrDefault(
-                    s => s.Lanche.Id == lanche.Id &&
-                    s.CarrinhoCompraId == CarrinhoCompraId);
+            var carrinhoCompraItem = GetCarrinhoCompraItem(lanche);
 
             var quantidadeLocal = 0;
 
-            if (carrinhoCompraItem != null)
+            if (carrinhoCompraItem.isNull())
             {
                 if (carrinhoCompraItem.Quantidade > 1)
                 {
@@ -97,6 +94,38 @@ namespace LanchesMac.Models
 
             _appDbContext.SaveChanges();
             return quantidadeLocal;
+        }
+
+        // retorna instancia caso exista, caso não cria uma nova
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItems()
+        {
+            return CarrinhoCompraItems ?? (CarrinhoCompraItems =
+                _appDbContext.CarrinhoCompraItems.Where(c => CarrinhoCompraId == CarrinhoCompraId)
+                .Include(s => s.Lanche)
+                .ToList());
+        }
+
+        public void LimparCarrinho()
+        {
+            var carrinhoItens = _appDbContext.CarrinhoCompraItems
+                .Where(carrinho => carrinho.CarrinhoCompraId == CarrinhoCompraId);
+
+            removeRangeOfCarrinhoCompra(carrinhoItens);
+           
+        }
+
+
+        private void removeRangeOfCarrinhoCompra(IQueryable<CarrinhoCompraItem> carrinhoItens)
+        {
+            _appDbContext.CarrinhoCompraItems.RemoveRange(carrinhoItens);
+            _appDbContext.SaveChanges();
+        }
+
+        public decimal GetCarrinhCompraTotal()
+        {
+            return (decimal) _appDbContext.CarrinhoCompraItems
+                .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+                .Select(c => c.Lanche.Preco * c.Quantidade).Sum();           
         }
 
     }

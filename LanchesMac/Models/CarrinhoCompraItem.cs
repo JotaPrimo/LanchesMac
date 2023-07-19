@@ -18,6 +18,8 @@ namespace LanchesMac.Models
         {
         }
 
+        public bool isNull() => this == null;
+
 
 
 
