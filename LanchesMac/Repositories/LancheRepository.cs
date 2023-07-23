@@ -17,8 +17,8 @@ namespace LanchesMac.Repositories
         public IEnumerable<Lanche> GetAll => _dbContext.Lanches.Include(c => c.Categoria);
 
         public IEnumerable<Lanche> GetPreferidos => _dbContext.Lanches.
-            Where(l => l.IslanchePreferido).
-            Include(c => c.Categoria);
+                                                    Where(l => l.IslanchePreferido).
+                                                    Include(c => c.Categoria);
 
         public Lanche GetLancheById(int id)
         {
