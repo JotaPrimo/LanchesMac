@@ -18,6 +18,25 @@ namespace LanchesMac.Repositories.Interfaces
         public void CriarPedido(Pedido pedido)
         {
             pedido.PedidoEnviado = DateTime.Now;
+            _appDbContext.Pedido.Add(pedido);
+            _appDbContext.SaveChanges();
+
+            var carrinhoCompraItens = _carrinhoCompra.CarrinhoCompraItems;
+
+            foreach (var carrinhoItem in carrinhoCompraItens)
+            {
+                var pedidoDetail = new PedidoDetalhe()
+                {
+                    Quantidade = carrinhoItem.Quantidade,
+                    LancheId = carrinhoItem.Lanche.Id,
+                    PedidoId = pedido.PedidoId,
+                    Preco = (decimal) carrinhoItem.Lanche.Preco
+                };
+
+                _appDbContext.PedidoDetalhes.Add(pedidoDetail);
+                _appDbContext.SaveChanges();
+            }
+
         }
 
 

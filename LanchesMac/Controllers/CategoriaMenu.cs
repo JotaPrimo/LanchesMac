@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LanchesMac.Controllers
 {
-    public class CategoriaMenucs : ViewComponent
+    public class CategoriaMenu : ViewComponent
     {
         private readonly ICategoriaRepository _categoriaRepository;
 
-        public CategoriaMenucs(ICategoriaRepository categoriaRepository)
+        public CategoriaMenu(ICategoriaRepository categoriaRepository)
         {
             _categoriaRepository = categoriaRepository;
         }
