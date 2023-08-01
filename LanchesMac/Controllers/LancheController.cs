@@ -27,18 +27,9 @@ namespace LanchesMac.Controllers
             }
             else
             {
-                if (string.Equals("Normal", categoria, StringComparison.OrdinalIgnoreCase))
-                {
-                    lanches = _lancheRepository.GetAll
-                        .Where(l => l.Categoria.CategoriaNome.Equals("Normal"))
-                        .OrderBy(l => l.Nome);
-                }
-                else
-                {
-                    lanches = _lancheRepository.GetAll
-                       .Where(l => l.Categoria.CategoriaNome.Equals("Natural"))
-                       .OrderBy(l => l.Nome);
-                }
+                lanches = _lancheRepository.GetAll.
+                    Where(l => l.Categoria.CategoriaNome == categoria)
+                    .OrderBy(c => c.Nome);
                 categoriaAtual = categoria;
             }
 
