@@ -15,6 +15,10 @@ namespace LanchesMac.Context
 
         public DbSet<CarrinhoCompraItem> CarrinhoCompraItems { get; set; }
 
+        public DbSet<Pedido> Pedido { get; set; }
+
+        public DbSet<PedidoDetalhe> PedidoDetalhes { get; set; }
+
         public void SeedData()
         {
             if (!Categorias.Any())
