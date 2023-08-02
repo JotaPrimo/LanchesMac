@@ -28,7 +28,7 @@ namespace LanchesMac.Repositories.Interfaces
                 var pedidoDetail = new PedidoDetalhe()
                 {
                     Quantidade = carrinhoItem.Quantidade,
-                    LancheId = carrinhoItem.Lanche.Id,
+                    LancheId = carrinhoItem.Lanche.LancheId,
                     PedidoId = pedido.PedidoId,
                     Preco = (decimal) carrinhoItem.Lanche.Preco
                 };

@@ -22,7 +22,7 @@ namespace LanchesMac.Controllers
 
             if (string.IsNullOrEmpty(categoria))
             {
-                lanches = _lancheRepository.GetAll.OrderBy(l => l.Id);
+                lanches = _lancheRepository.GetAll.OrderBy(l => l.LancheId);
                 categoriaAtual = "Todos os lanches";
             }
             else
@@ -44,7 +44,7 @@ namespace LanchesMac.Controllers
 
         public IActionResult Details(int lancheId)
         {
-            var lanche = _lancheRepository.GetAll.FirstOrDefault(l => l.Id == lancheId);
+            var lanche = _lancheRepository.GetAll.FirstOrDefault(l => l.LancheId == lancheId);
             return View(lanche);
         }
 
@@ -55,7 +55,7 @@ namespace LanchesMac.Controllers
 
             if (string.IsNullOrEmpty(searchString))
             {
-                lanches = _lancheRepository.GetAll.OrderBy(p => p.Id);
+                lanches = _lancheRepository.GetAll.OrderBy(p => p.LancheId);
                 categoriaAtual = "Todos os Lanches";
             }else
             {

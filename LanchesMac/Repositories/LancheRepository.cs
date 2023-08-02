@@ -17,12 +17,12 @@ namespace LanchesMac.Repositories
         public IEnumerable<Lanche> GetAll => _dbContext.Lanches.Include(c => c.Categoria);
 
         public IEnumerable<Lanche> GetPreferidos => _dbContext.Lanches.
-                                                    Where(l => l.IslanchePreferido).
+                                                    Where(l => l.IsLanchePreferido).
                                                     Include(c => c.Categoria);
 
         public Lanche GetLancheById(int id)
         {
-            return _dbContext.Lanches.FirstOrDefault(l => l.Id == id);   
+            return _dbContext.Lanches.FirstOrDefault(l => l.LancheId == id);   
         }
     }
 

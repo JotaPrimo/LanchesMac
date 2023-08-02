@@ -45,7 +45,7 @@ namespace LanchesMac.Models
         {
             return
                 _appDbContext.CarrinhoCompraItems.SingleOrDefault(
-                    s => s.Lanche.Id == lanche.Id &&
+                    s => s.Lanche.LancheId == lanche.LancheId &&
                     s.CarrinhoCompraId == CarrinhoCompraId);
         }
 
